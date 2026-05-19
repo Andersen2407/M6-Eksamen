@@ -38,7 +38,7 @@ Udviklingen opdeles i følgende overordnede faser:
 ### Sprint 3 – Polering?
 
 
-## Design og arkitektur
+# Design og arkitektur
 Selve designet / visionen for systemet er således:
 ![alt text](zpictures/Mockup.PNG)
 
@@ -48,23 +48,48 @@ Systemet bliver en serverbaseret webapplikation bestående af 4 primære klientg
 - Warehouse Dashboard (2)
 - Mobile Worker Interface (3)
 
-# Requirements
+## Requirements
 Krav som fundet i forlængelse af AS-IS og TO-BE analyse i projektarbejdet
 
-## Novo Worker / "kunden"
+### Novo Worker / "kunden"
 - Skal kunne oprette nye warehouse opgaver
 - Skal kunne angive deadline
 - Skal kunne markere DOT levering
 - Skal kunne videregive relevant information
 
-## Warehouse Worker
+### Warehouse Worker
 - Skal kunne se tilgængelige opgaver
 - Skal kunne tage opgaver
 - Skal kunne afslutte opgaver
 - Skal kunne sende tracking information ved afslutning
 
-## Warehouse Admin & Dashboard info
+### Warehouse Admin & Dashboard info
 - Skal kunne overvåge alle opgaver
 - Skal kunne se workload overview
 - Skal kunne reassigne opgaver
 - Skal kunne følge live status på warehouse aktiviteter
+
+## Teknologier
+Valg af teknologier:
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+
+### Backend
+- Node.js
+- Express.js
+- Socket.IO
+
+### Database
+- SQLite
+
+### Versionsstyring
+- GitHub Desktop
+- GitHub
+
+## Struktur og sammenhæng
+Her ses hvordan vi er gået fra et mockup til egentlig systemdesign på baggrund af de valgte teknologier
+
+![alt text](zpictures/Komponentdiagram.png)

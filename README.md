@@ -40,13 +40,19 @@ Udviklingen opdeles i følgende overordnede faser:
 
 # Design og arkitektur
 Selve designet / visionen for systemet er således:
-![alt text](zpictures/Mockup.PNG)
+![alt text](zpictures/Mockup.png)
 
 Systemet bliver en serverbaseret webapplikation bestående af 4 primære klientgrænseflader:
 - Login interface
 - Task Creation Portal (1)
 - Warehouse Dashboard (2)
 - Mobile Worker Interface (3)
+
+Hertil en database der skal lagre:
+- Users
+- Opgaver / tasks
+- Task historik
+- Beskeder der "sendes" ved afslutning af task
 
 ## Requirements
 Krav som fundet i forlængelse af AS-IS og TO-BE analyse i projektarbejdet
@@ -85,11 +91,41 @@ Valg af teknologier:
 ### Database
 - SQLite
 
-### Versionsstyring
+### Versionsstyring og samarbejde
 - GitHub Desktop
 - GitHub
+- Liveshare
 
 ## Struktur og sammenhæng
 Her ses hvordan vi er gået fra et mockup til egentlig systemdesign på baggrund af de valgte teknologier
 
 ![alt text](zpictures/Komponentdiagram.png)
+
+Fælles aftale for filstruktur, så der kan udvikles parallelt!!! (Temp filer for nu)
+
+```bash
+M6-Eksamen/
+│
+├── public/
+│   ├── css/
+│   └── js/
+│
+├── server/
+│   ├── database/
+│   ├── middleware/
+│   └── routes/
+│
+├── views/
+│   ├── admin.html
+│   ├── login.html
+│   ├── mobile.html
+│   └── task.html
+└──
+```
+
+# Vigtige kommandoer / setup
+For at initialisere Node til projektet og installere alle dependencies skal disse kommandoer køres:
+
+npm init -y \
+npm install express sqlite3 express-session bcrypt socket.io (Tech-stack som vi regner med at bruge) \
+npm install nodemon --save-dev (Rart at have til at genstarte applikationer når der foretages en ændring)

@@ -19,11 +19,11 @@ På dashboardet kunne der også være en sektion med "live-tracking" af igangvæ
 For at flytte en opgave tænker jeg at senior WH medarbejderen, Helle, skal have mulighed for at logge ind som admin og flytte opgaver hvis der er behov for dette.
 
 ## Udviklingsfordeling og "sprints" timeline
-Deles op med frontend og backend arbejde???? på forskellige branches efter aftalt fælles design
+Deles op med frontend og backend arbejde på forskellige branches efter aftalt fælles design.
 
-Projektet udvikles gennem en iterativ udviklingsproces opdelt i mindre udviklingsfaser ("sprints"), hvor der løbende udvikles, testes og fælles evaluering af funktionalitet.
+Projektet udvikles gennem en iterativ udviklingsproces opdelt i mindre udviklingsfaser ("sprints"), hvor der løbende udvikles og derefter testes fælles ved at merges til main sidst på dagen.
 
-Udviklingen opdeles i følgende overordnede faser:
+Udviklingen opdeles i følgende overordnede sprints:
 
 ### Sprint "0" – Problemforståelse og design fra projektarbejde
 - Analyse af warehouse workflow
@@ -31,11 +31,63 @@ Udviklingen opdeles i følgende overordnede faser:
 - Udarbejdelse af TO-BE redesign
 - Mockup og visualisering af løsning
 
-### Sprint 1 – Backend og database
+### Sprint 1 – Projekt setup og fælles struktur
+25/05
+- Projekt setup
+- Installation og konfiguration af Node.js
+- Oprettelse af frontend og backend branches
+- Filstruktur
+- Opdatering af README
+- Opsætning af GitHub Projects / Kanban board???
+- Fælles valg af tech-stack og udviklingsroller
 
-### Sprint 2 – Frontend og dashboards
+### Sprint 2 – Server setup og dashboard start
+26/05\
+Backend:
+- Opsætning af localhost Express server
+- Routing til views og API endpoints
+- Grundlæggende serverstruktur
 
-### Sprint 3 – Polering?
+Frontend:
+- Start på dashboard layout
+- Opsætning af HTML/CSS struktur
+- Første dashboard komponenter baseret på mockup
+
+### Sprint 3 – Database og medarbejder terminaler
+27/05\
+Backend:
+- SQLite database setup
+- Database initialization og schemas
+- Task creation endpoints
+- Rollebaseret authentication
+
+Frontend:
+- Start på mobile worker interface
+- Start på task creation portal
+- UI komponenter til opgavevisning
+
+### Sprint 4 – Integration og realtids-funktionalitet
+28/05 \
+Backend:
+- Realtime opdateringer via Socket.IO
+- Funktionelle API routes
+- Test med Thunder Client
+
+Frontend:
+- Realtids opdatering mellem dashboard og mobile views
+- Claim/complete task workflows
+- Polering af dashboard og mobile layouts
+- UI til live tracking og workload overview
+
+### Sprint 5 – Fælles polering og aflevering
+29-31/05????
+- Bug fixing??
+- Simpel login side
+- Middleware til authentication af sessioner
+- Klargør README til aflevering
+- Polering så det stemmer med Mockup
+    - Test af samlet workflow
+- AFLEVER!
 
 
 # Design og arkitektur

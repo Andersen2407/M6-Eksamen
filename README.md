@@ -23,7 +23,7 @@ Deles op med frontend og backend arbejde på forskellige branches efter aftalt f
 
 Projektet udvikles gennem en iterativ udviklingsproces opdelt i mindre udviklingsfaser ("sprints"), hvor der løbende udvikles og derefter testes fælles ved at merges til main sidst på dagen.
 
-Udviklingen opdeles i følgende overordnede sprints:
+Udviklingen opdeles i følgende overordnede sprints, hvor der merges ind i test branch mellem hver sprint:
 
 ### Sprint "0" – Problemforståelse og design fra projektarbejde
 - Analyse af warehouse workflow

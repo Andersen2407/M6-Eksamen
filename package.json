@@ -1,0 +1,32 @@
+{
+  "name": "m6-eksamen",
+  "version": "1.0.0",
+  "description": "M6: Design af it-baserede systemer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andersen2407/M6-Eksamen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Andersen2407/M6-Eksamen/issues"
+  },
+  "homepage": "https://github.com/Andersen2407/M6-Eksamen#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "socket.io": "^4.8.3",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -181,3 +181,7 @@ For at initialisere Node til projektet og installere alle dependencies skal diss
 npm init -y \
 npm install express sqlite3 express-session bcrypt socket.io (Tech-stack som vi regner med at bruge) \
 npm install nodemon --save-dev (Rart at have til at genstarte applikationer når der foretages en ændring)
+
+For at starte serveren:
+
+npm start dev

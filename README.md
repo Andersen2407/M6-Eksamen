@@ -92,7 +92,7 @@ Frontend:
 
 # Design og arkitektur
 Selve designet / visionen for systemet er således:
-![alt text](zpictures/Mockup.png)
+![alt text](zpictures/Mockup.PNG)
 
 Systemet bliver en serverbaseret webapplikation bestående af 4 primære klientgrænseflader:
 - Login interface

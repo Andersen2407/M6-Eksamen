@@ -23,7 +23,7 @@ Deles op med frontend og backend arbejde på forskellige branches efter aftalt f
 
 Projektet udvikles gennem en iterativ udviklingsproces opdelt i mindre udviklingsfaser ("sprints"), hvor der løbende udvikles og derefter testes fælles ved at merges til main sidst på dagen.
 
-Udviklingen opdeles i følgende overordnede sprints:
+Udviklingen opdeles i følgende overordnede sprints, hvor der merges ind i test branch mellem hver sprint:
 
 ### Sprint "0" – Problemforståelse og design fra projektarbejde
 - Analyse af warehouse workflow
@@ -92,7 +92,7 @@ Frontend:
 
 # Design og arkitektur
 Selve designet / visionen for systemet er således:
-![alt text](zpictures/Mockup.png)
+![alt text](zpictures/Mockup.PNG)
 
 Systemet bliver en serverbaseret webapplikation bestående af 4 primære klientgrænseflader:
 - Login interface
@@ -181,3 +181,7 @@ For at initialisere Node til projektet og installere alle dependencies skal diss
 npm init -y \
 npm install express sqlite3 express-session bcrypt socket.io (Tech-stack som vi regner med at bruge) \
 npm install nodemon --save-dev (Rart at have til at genstarte applikationer når der foretages en ændring)
+
+For at starte serveren:
+
+npm start dev

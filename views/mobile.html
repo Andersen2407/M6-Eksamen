@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Worker Tasks</title>
+    <title>Mobile Worker Interface</title>
 
     <link rel="stylesheet"
           href="/css/mobile.css">
@@ -12,23 +12,17 @@
 
 <body>
 
-    <h1>Available Tasks</h1>
+    <header>
 
-    <div id="taskList">
+        <h1>Warehouse Tasks</h1>
 
-        <div class="task-card">
+    </header>
 
-            <h3>Send package</h3>
+    <main id="taskList">
 
-            <p>Germany shipment</p>
+    </main>
 
-            <button>
-                Claim Task
-            </button>
-
-        </div>
-
-    </div>
+    <script src="/socket.io/socket.io.js"></script>
 
     <script src="/js/mobile.js"></script>
 

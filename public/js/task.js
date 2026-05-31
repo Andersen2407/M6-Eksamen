@@ -6,7 +6,14 @@ async function createTask() {
             document.getElementById("title").value,
 
         description:
-            document.getElementById("description").value
+            document.getElementById(
+                "description"
+            ).value,
+
+        deadline:
+            document.getElementById(
+                "deadline"
+            ).value
     };
 
     await fetch("/tasks/create", {
@@ -14,7 +21,9 @@ async function createTask() {
         method: "POST",
 
         headers: {
-            "Content-Type": "application/json"
+
+            "Content-Type":
+                "application/json"
         },
 
         body: JSON.stringify(task)

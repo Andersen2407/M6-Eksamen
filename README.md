@@ -184,4 +184,8 @@ npm install nodemon --save-dev (Rart at have til at genstarte applikationer når
 
 For at starte serveren:
 
-npm start dev
+npm start dev 
+
+Serveren initialiserer selv databasen men hvis man vil kigge den igennem inden kan man køre:
+
+node initDb.js

@@ -21,8 +21,13 @@ db.serialize(() => {
 
             title TEXT,
             description TEXT,
+            deadline TEXT,
 
-            status TEXT DEFAULT 'available'
+            status TEXT DEFAULT 'available',
+
+            assigned_to INTEGER,
+
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
     `);
 

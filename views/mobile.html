@@ -1,29 +1,130 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
 
-    <title>Mobile Worker Interface</title>
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet"
-          href="/css/mobile.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Warehouse Worker</title>
+
+    <link rel="stylesheet" href="/css/mobile.css">
 
 </head>
-
 <body>
 
-    <header>
+    <div class="mobile-app">
 
-        <h1>Warehouse Tasks</h1>
+        <!-- TOP BAR -->
+        <header class="top-bar">
 
-    </header>
+            <div class="menu-icon">
+                ☰
+            </div>
 
-    <main id="taskList">
+            <h1>Mine opgaver</h1>
 
-    </main>
+            <div id="refreshButton">
+                ↻
+            </div>
+
+        </header>
+
+        <!-- TABS -->
+        <div class="tabs">
+
+            <button
+                class="tab-button active"
+                id="availableTab"
+            >
+                Tilgængelige
+            </button>
+
+            <button
+                class="tab-button"
+                id="progressTab"
+            >
+                Igangværende
+            </button>
+
+        </div>
+
+        <!-- TASKS -->
+        <main>
+
+            <div id="availableTasks"
+                 class="task-list">
+            </div>
+
+            <div id="myTasks"
+                 class="task-list hidden">
+            </div>
+
+        </main>
+
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+
+            <div class="bottom-item active">
+                Opgaver
+            </div>
+
+            <div class="bottom-item">
+                I gang
+            </div>
+
+            <div class="bottom-item">
+                Afsluttet
+            </div>
+
+            <div class="bottom-item">
+                Beskeder
+            </div>
+
+        </nav>
+
+    </div>
+
+    <!-- COMPLETE MODAL -->
+    <div id="completeModal"
+         class="modal hidden">
+
+        <div class="modal-content">
+
+            <h2>Afslut opgave</h2>
+
+            <input
+                type="text"
+                id="trackingNumber"
+                placeholder="Tracking nummer"
+            >
+
+            <textarea
+                id="completionMessage"
+                placeholder="Besked til afsender"
+            ></textarea>
+
+            <button id="submitComplete">
+
+                Afslut opgave
+
+            </button>
+
+            <button
+                id="closeModal"
+                class="secondary"
+            >
+
+                Annuller
+
+            </button>
+
+        </div>
+
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
-
     <script src="/js/mobile.js"></script>
 
 </body>

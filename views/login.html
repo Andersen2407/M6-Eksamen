@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Login</title>
+
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <h1>Warehouse System</h1>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Novo Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p id="errorMessage"></p>
+
+    </div>
+
+    <script src="/js/login.js"></script>
+    <script>
+
+    async function checkSession() {
+
+        const response =
+            await fetch("/auth/me", {
+                credentials: "include"
+            });
+
+        if (!response.ok) return;
+
+        const user = await response.json();
+
+        switch(user.role) {
+
+            case "admin":
+                window.location.href = "/admin";
+                break;
+
+            case "warehouse_worker":
+                window.location.href = "/mobile";
+                break;
+
+            case "novo_worker":
+                window.location.href = "/task";
+                break;
+        }
+    }
+
+    checkSession();
+
+    </script>
+
+</body>
+</html>

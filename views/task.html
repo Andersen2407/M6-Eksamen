@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Warehouse Request</title>
+
+    <link rel="stylesheet" href="/css/task.css">
+
+</head>
+<body>
+
+    <div class="request-wrapper">
+
+        <div class="request-card">
+
+            <div class="request-header">
+
+                <h1>Ny opgave</h1>
+
+            </div>
+
+            <form id="taskForm">
+
+                <!-- AFSENDER -->
+                <div class="form-group">
+
+                    <label>Afsender *</label>
+
+                    <input
+                        type="text"
+                        id="sender"
+                        value="Production User"
+                        readonly
+                    >
+
+                </div>
+
+                <!-- MODTAGER -->
+                <div class="form-group">
+
+                    <label>Modtager *</label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        required
+                    >
+
+                </div>
+
+                <!-- ADRESSE -->
+                <div class="form-group">
+
+                    <label>Adresse *</label>
+
+                    <input
+                        type="text"
+                        id="address"
+                        required
+                    >
+
+                </div>
+
+                <!-- LAND -->
+                <div class="form-group">
+
+                    <label>Land *</label>
+
+                    <select id="destination">
+
+                        <option value="Germany">
+                            Tyskland
+                        </option>
+
+                        <option value="Sweden">
+                            Sverige
+                        </option>
+
+                        <option value="Norway">
+                            Norge
+                        </option>
+
+                        <option value="Denmark">
+                            Danmark
+                        </option>
+
+                        <option value="United Kingdom">
+                            England
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- BESKRIVELSE -->
+                <div class="form-group">
+
+                    <label>Beskrivelse *</label>
+
+                    <textarea
+                        id="description"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- DEADLINE -->
+                <div class="form-group">
+
+                    <label>Deadline *</label>
+
+                    <input
+                        type="datetime-local"
+                        id="deadline"
+                        required
+                    >
+
+                </div>
+
+                <!-- DOT -->
+                <div class="toggle-row">
+
+                    <label>DOT levering</label>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="dot"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+                <!-- FILE -->
+                <div class="form-group">
+
+                    <label>Vedhæft filer</label>
+
+                    <input
+                        type="file"
+                        id="file"
+                    >
+
+                </div>
+
+                <!-- BUTTON -->
+                <button type="submit">
+
+                    Send opgave
+
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="/js/request.js"></script>
+
+</body>
+</html>

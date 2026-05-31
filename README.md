@@ -21,7 +21,9 @@ For at flytte en opgave tænker jeg at senior WH medarbejderen, Helle, skal have
 ## Udviklingsfordeling og "sprints" timeline
 Deles op med frontend og backend arbejde på forskellige branches efter aftalt fælles design.
 
-Projektet udvikles gennem en iterativ udviklingsproces opdelt i mindre udviklingsfaser ("sprints"), hvor der løbende udvikles og derefter testes fælles ved at merges til main sidst på dagen.
+Projektet udvikles gennem en iterativ udviklingsproces opdelt i mindre udviklingsfaser ("sprints"), hvor der løbende udvikles og derefter testes fælles ved at merges til main sidst på dagen. Den generelle struktur til dette kan ses her:
+
+![alt text](zpictures/Git.png)
 
 Udviklingen opdeles i følgende overordnede sprints, hvor der merges ind i test branch mellem hver sprint:
 
@@ -80,13 +82,15 @@ Frontend:
 - UI til live tracking og workload overview
 
 ### Sprint 5 – Fælles polering og aflevering
-29-31/05????
-- Bug fixing??
+29-31/05
+- Bug fixing
 - Simpel login side
 - Middleware til authentication af sessioner
 - Klargør README til aflevering
 - Polering så det stemmer med Mockup
     - Test af samlet workflow
+    - Færdiggørelse af frontend + backend så det ligner mockup
+- Tegn figurer
 - AFLEVER!
 
 
@@ -105,6 +109,10 @@ Hertil en database der skal lagre:
 - Opgaver / tasks
 - Task historik
 - Beskeder der "sendes" ved afslutning af task
+
+En visualisering af hvordan dette hænger sammen kan ses her med en ERD:
+
+![alt text](zpictures/ERD.png)
 
 ## Requirements
 Krav som fundet i forlængelse af AS-IS og TO-BE analyse i projektarbejdet
@@ -165,7 +173,10 @@ M6-Eksamen/
 ├── server/
 │   ├── database/
 │   ├── middleware/
-│   └── routes/
+│   ├── routes/
+│   ├── db.js
+│   ├── initDB.js
+│   └── server.js
 │
 ├── views/
 │   ├── admin.html
@@ -174,6 +185,10 @@ M6-Eksamen/
 │   └── task.html
 └──
 ```
+
+For at få en ide til hvordan alt dette hænger sammen er der lavet en abstraheret UML diagram der viser hvordan de 3 hovedklasser interagerer og relaterer sig til hinanden:
+
+![alt text](zpictures/UML.png)
 
 # Vigtige kommandoer / setup
 For at initialisere Node til projektet og installere alle dependencies skal disse kommandoer køres:

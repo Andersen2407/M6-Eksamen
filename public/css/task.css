@@ -1,0 +1,222 @@
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f2f4f7;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.request-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.request-card {
+
+    width: 420px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.request-header {
+
+    background: #002b6b;
+
+    color: white;
+
+    padding: 20px;
+}
+
+.request-header h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+}
+
+form {
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+label {
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+input,
+textarea,
+select {
+
+    padding: 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+textarea {
+
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+button {
+
+    margin-top: 10px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #003b95;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+button:hover {
+
+    background: #002766;
+}
+
+#message {
+
+    text-align: center;
+
+    padding-bottom: 20px;
+
+    font-weight: bold;
+}
+
+/* TOGGLE */
+
+.toggle-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.switch {
+
+    position: relative;
+
+    display: inline-block;
+
+    width: 52px;
+
+    height: 28px;
+}
+
+.switch input {
+
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+}
+
+.slider {
+
+    position: absolute;
+
+    cursor: pointer;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #ccc;
+
+    transition: .4s;
+
+    border-radius: 34px;
+}
+
+.slider:before {
+
+    position: absolute;
+
+    content: "";
+
+    height: 20px;
+
+    width: 20px;
+
+    left: 4px;
+
+    bottom: 4px;
+
+    background-color: white;
+
+    transition: .4s;
+
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+
+    background-color: #0078d4;
+}
+
+input:checked + .slider:before {
+
+    transform: translateX(24px);
+}

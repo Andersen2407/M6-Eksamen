@@ -1,52 +1,90 @@
 const express = require("express");
-const router = express.Router();
 
 const db = require("../db");
 
-router.post("/create", (req, res) => {
+module.exports = (io) => {
 
-    const {
-        title,
-        description
-    } = req.body;
+    const router = express.Router();
 
-    db.run(`
-        INSERT INTO tasks
-        (title, description)
-        VALUES (?, ?)
-    `,
-    [
-        title,
-        description
-    ],
-    (err) => {
+    router.get("/", (req, res) => {
 
-        if (err) {
+        db.all(
+            "SELECT * FROM tasks",
+            [],
+            (err, rows) => {
 
-            return res.status(500).json(err);
-        }
+                res.json(rows);
+            }
+        );
+    });
 
-        res.json({
-            message: "Task created"
+    router.post("/create", (req, res) => {
+
+        const {
+            title,
+            description,
+            deadline
+        } = req.body;
+
+        db.run(`
+            INSERT INTO tasks
+            (
+                title,
+                description,
+                deadline
+            )
+            VALUES (?, ?, ?)
+        `,
+        [
+            title,
+            description,
+            deadline
+        ],
+        function(err) {
+
+            io.emit("taskUpdated");
+
+            res.json({
+                id: this.lastID
+            });
         });
     });
-});
 
-router.get("/", (req, res) => {
+    router.post("/:id/claim", (req, res) => {
 
-    db.all(
-        "SELECT * FROM tasks",
-        [],
-        (err, rows) => {
+        db.run(`
+            UPDATE tasks
+            SET status = 'in_progress'
+            WHERE id = ?
+        `,
+        [req.params.id],
+        () => {
 
-            if (err) {
+            io.emit("taskUpdated");
 
-                return res.status(500).json(err);
-            }
+            res.json({
+                message: "Task claimed"
+            });
+        });
+    });
 
-            res.json(rows);
-        }
-    );
-});
+    router.post("/:id/complete", (req, res) => {
 
-module.exports = router;
+        db.run(`
+            UPDATE tasks
+            SET status = 'completed'
+            WHERE id = ?
+        `,
+        [req.params.id],
+        () => {
+
+            io.emit("taskUpdated");
+
+            res.json({
+                message: "Task completed"
+            });
+        });
+    });
+
+    return router;
+};

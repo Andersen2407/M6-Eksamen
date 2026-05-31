@@ -1,35 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Warehouse Dashboard</title>
-    <link rel="stylesheet"
-          href="/css/dashboard.css">
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+
 </head>
 <body>
 
-    <header>
-        <h1>Novo Nordisk Warehouse Dashboard</h1>
-    </header>
+    <div class="dashboard-layout">
 
-    <main>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
 
-        <section class="task-section">
-            <h2>Available Tasks</h2>
+            <div class="logo">
 
-            <div class="task-card">
-                Placeholder task
+                <h2>Warehouse Dashboard</h2>
+
             </div>
-        </section>
 
-        <section class="task-section">
-            <h2>In Progress</h2>
-        </section>
+            <nav>
 
-        <section class="task-section">
-            <h2>Completed</h2>
-        </section>
+                <div class="nav-item active">
+                    Overblik
+                </div>
 
-    </main>
+                <div class="nav-item">
+                    Nye opgaver
+                    <span id="sidebarAvailableCount"
+                          class="nav-badge">
+                        0
+                    </span>
+                </div>
+
+                <div class="nav-item">
+                    Igangværende
+                    <span id="sidebarProgressCount"
+                          class="nav-badge">
+                        0
+                    </span>
+                </div>
+
+                <div class="nav-item">
+                    Afsluttede
+                </div>
+
+                <div class="nav-item">
+                    Live tracking
+                </div>
+
+                <div class="nav-item">
+                    Rapporter
+                </div>
+
+                <div class="nav-item">
+                    Indstillinger
+                </div>
+
+            </nav>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <div class="top-bar">
+
+                <div id="liveClock"></div>
+
+                <div class="admin-info">
+
+                    <div class="online-dot"></div>
+
+                    <span>Admin: Helle</span>
+
+                </div>
+
+            </div>
+
+            <!-- GRID -->
+            <div class="dashboard-grid">
+
+                <!-- NEW TASKS -->
+                <section class="card large-card">
+
+                    <div class="card-header">
+
+                        <h2>Nye opgaver</h2>
+
+
+                    </div>
+                    <div class="task-header-row">
+                        <div>Prioritet</div>
+                        <div>Modtager</div>
+                        <div>Afsender</div>
+                        <div>Destination</div>
+                        <div>Deadline</div>
+                        <div>DOT</div>
+                    </div>
+
+                    <div id="availableTasks"
+                         class="task-table">
+                    </div>
+
+                </section>
+
+                <!-- ACTIVE TASKS -->
+                <section class="card">
+
+                    <div class="card-header">
+
+                        <h2>Igangværende</h2>
+
+                    </div>
+
+                    <div id="inProgressTasks"></div>
+
+                </section>
+
+                <!-- LIVE TRACKING -->
+                <section class="card">
+
+                    <div class="card-header">
+
+                        <h2>Live tracking</h2>
+
+                    </div>
+
+                    <div id="workers"></div>
+
+                </section>
+
+                <!-- COMPLETED -->
+                <section class="card">
+
+                    <div class="card-header">
+
+                        <h2>Afsluttede opgaver</h2>
+
+                    </div>
+
+                    <div id="completedTasks"></div>
+
+                </section>
+
+                <!-- NOTIFICATIONS -->
+                <section class="card">
+
+                    <div class="card-header">
+
+                        <h2>Notifikationer</h2>
+
+                    </div>
+
+                    <div id="notifications">
+
+                        <p>
+                            System ready
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/dashboard.js"></script>
 
 </body>
 </html>
